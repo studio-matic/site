@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="contatti">
+
+    <div class="form-container">
+        <h1>Contattaci!</h1>
+
+        <div class="contact-methods">
+            <button type="button" class="method-btn active" data-target="email">Email</button>
+            <button type="button" class="method-btn" data-target="telefono">Telefono</button>
+        </div>
+
+        <form class="contact-form">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="telefono" placeholder="Telefono" required>
+            <input type="text" name="nome" placeholder="Nome" required>
+            <textarea name="messaggio" placeholder="Messaggio" rows="5" required></textarea>
+            <button type="submit">Invia</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
