@@ -4,13 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Studiomatic</title>
+        <link rel="icon" type="image/x-icon" href="images/logo.png" />
 
         <link rel="stylesheet" href="style.css" />
         <link
             rel="stylesheet"
             href="assets/fontawesome-free-7.1.0-web/css/all.min.css"
         />
-        <script src="script.js"></script>
     </head>
 
     <body class="home">
@@ -48,7 +48,38 @@
         </nav>
 
         <!-- CONTENT -->
-        <main class="content"></main>
+        <main class="content">
+            <p id="descrizione_sito">
+                La nostra missione è mettere a disposizione il materiale
+                necessario agli studenti per affrontare le lezioni
+            </p>
+
+            <!-- carosello di immagini: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+            <div class="carosello">
+                <!-- immagini -->
+                <div class="immagine_carosello">
+                    <div class="numero">1 / 2</div>
+                    <img src="images/macchinetta.jpg" style="width: 100%" />
+                    <div class="descrizione_carosello">
+                        La nostra macchinetta
+                    </div>
+                </div>
+                <div class="immagine_carosello">
+                    <div class="numero">2 / 2</div>
+                    <img src="images/scuola.jpg" style="width: 100%" />
+                    <div class="descrizione_carosello">La nostra classe</div>
+                </div>
+                <!-- bottoni per scorrere le immagini -->
+                <a class="indietro" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="avanti" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br />
+            <!-- icone che indicano la posizione della foto nel carosello -->
+            <div style="text-align: center">
+                <span class="icona_carosello" onclick="currentSlide(1)"></span>
+                <span class="icona_carosello" onclick="currentSlide(2)"></span>
+            </div>
+        </main>
 
         <!-- FOOTER -->
         <footer class="footer">
@@ -149,5 +180,8 @@
                 </div>
             </div>
         </footer>
+        <!-- aspettare che il DOM venga caricato -->
+        <script src="carosello.js"></script>
+        <script src="contatti.js"></script>
     </body>
 </html>

@@ -1,5 +1,5 @@
 /* === PALETTE COLORI STUDIOMATIC ===
-#011B2F (blu scuro)
+#011b2f (blu scuro)
 #012D4B
 #003F66
 #F4E67B
@@ -7,11 +7,15 @@
 #FFD700 (giallo acceso)
 */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: sans-serif;
     color: #011b2f;
-    margin-top: 75px;
+    margin-top: 100px;
 }
 
 div {
@@ -64,8 +68,114 @@ div {
 }
 
 .nav-links a:hover {
-    background-color: #f4e67b;
+    background-color: #fadf3e;
     color: #011b2f;
+}
+
+.content {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+#descrizione_sito {
+    max-width: 900px;
+    margin: 40px auto 60px;
+    padding: 20px 28px;
+
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+
+    color: #011b2f;
+    background-color: #f4e67b;
+
+    border-left: 6px solid #ffd700;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 15px #0023;
+}
+
+/* Carosello */
+.carosello {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.avanti,
+.indietro {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    background-color: #011b2f;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.avanti {
+    right: 15px;
+    border-radius: 10px;
+}
+
+.indietro {
+    left: 15px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.avanti:hover,
+.indietro:hover {
+    background-color: #f4e67b;
+}
+
+.descrizione_carosello {
+    background-color: #011b2f;
+    color: #f2f2f2;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 15px 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    width: auto;
+    text-align: center;
+}
+
+/* es: 1/2  */
+.numero {
+    color: #f2f2f2;
+    background-color: #011b2f;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 15px 15px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+/* icone che indicano la posizione della foto nel carosello */
+.icona_carosello {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #011b2f;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.icona_carosello:hover {
+    background-color: #f4e67b;
 }
 
 /*FOOTER*/
