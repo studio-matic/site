@@ -1,32 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contatti</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatti</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body class="contatti">
+        <nav class="navbar">
+            <a href="index.html" class="navbar_logo">
+                <img src="images/logo.png" alt="Studiomatic logo" id="logo" />
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a href="contatti.html">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Contatti</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="chi_siamo.html">
+                        <i class="fa-solid fa-people-group"></i>
+                        <span>Chi siamo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="supportaci.html">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Supportaci</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="domande_frequenti.html">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>Domande frequenti</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-<body class="contatti">
+        <div class="form-container">
+            <h1>Contattaci!</h1>
 
-    <div class="form-container">
-        <h1>Contattaci!</h1>
+            <div class="contact-methods">
+                <button
+                    type="button"
+                    class="method-btn active"
+                    data-target="email"
+                >
+                    Email
+                </button>
+                <button type="button" class="method-btn" data-target="telefono">
+                    Telefono
+                </button>
+            </div>
 
-        <div class="contact-methods">
-            <button type="button" class="method-btn active" data-target="email">Email</button>
-            <button type="button" class="method-btn" data-target="telefono">Telefono</button>
+            <form class="contact-form">
+                <input type="email" name="email" placeholder="Email" required />
+                <input
+                    type="number"
+                    name="telefono"
+                    placeholder="Telefono"
+                    required
+                />
+                <input type="text" name="nome" placeholder="Nome" required />
+                <textarea
+                    name="messaggio"
+                    placeholder="Messaggio"
+                    rows="5"
+                    required
+                ></textarea>
+                <button type="submit">Invia</button>
+            </form>
         </div>
 
-        <form class="contact-form">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="number" name="telefono" placeholder="Telefono" required>
-            <input type="text" name="nome" placeholder="Nome" required>
-            <textarea name="messaggio" placeholder="Messaggio" rows="5" required></textarea>
-            <button type="submit">Invia</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
-</body>
+        <footer class="footer">
+            <div class="footer-upper">
+                <div class="copyright">
+                    <a href="index.html">
+                        <img
+                            src="images/logo_background.svg"
+                            alt="Studiomatic logo"
+                            id="logo-footer"
+                        />
+                    </a>
+                    <p>
+                        <i class="fa-regular fa-copyright"></i>
+                        2025 Studiomatic
+                    </p>
+                </div>
 
+                <div class="term">
+                    <a href="/regole-utilizzo.html">Regole di Utilizzo</a>
+                    <a href="/informativa-privacy.html">Informativa Privacy</a>
+                </div>
+            </div>
+
+            <div class="links-container">
+                <nav class="footer-navigation">
+                    <ul>
+                        <li>
+                            <a href="contatti.html">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Contatti</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="chi_siamo.html">
+                                <i class="fa-solid fa-people-group"></i>
+                                <span>Chi siamo</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="supportaci.html">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>Supportaci</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="domande_frequenti.html">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <span>Domande frequenti</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="footer-contacts">
+                    <ul>
+                        <li>
+                            <a href="mailto:studiomatic.macchinzetti@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.imanzetti.edu.it/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <i class="fa-solid fa-school"></i>
+                                <span>ISITP Manzetti</span>
+                            </a>
+                            <p><span>Classe 5A IT</span></p>
+                            <p><span>A.S. 2025/2026</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a
+                        class="social-instagram"
+                        href="https://www.instagram.com/x"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        class="social-tiktok"
+                        href="https://www.tiktok.com/@x"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <script src="contatti.js"></script>
+    </body>
 </html>

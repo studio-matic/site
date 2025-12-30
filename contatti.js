@@ -4,8 +4,7 @@ const emailInput = document.querySelector('input[name="email"]');
 const phoneInput = document.querySelector('input[name="telefono"]');
 
 if (emailInput && phoneInput && methodButtons.length > 0) {
-  // All'avvio: nascondi entrambi i campi
-  emailInput.classList.add("hidden");
+  // All'avvio: nascondi il campo del numero di telefono
   phoneInput.classList.add("hidden");
 
   methodButtons.forEach((btn) => {
