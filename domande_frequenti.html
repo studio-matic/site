@@ -15,36 +15,39 @@
 
     <body class="home">
         <!-- NAVBAR -->
-        <nav class="navbar">
+        <nav class="navbar" id="myNavbar">
             <a href="index.html" class="navbar_logo">
                 <img src="images/logo.png" alt="Studiomatic logo" id="logo" />
             </a>
-            <ul class="nav-links">
-                <li>
-                    <a href="contatti.html">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>Contatti</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="chi_siamo.html">
-                        <i class="fa-solid fa-people-group"></i>
-                        <span>Chi siamo</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="supportaci.html">
-                        <i class="fa-solid fa-heart"></i>
-                        <span>Supportaci</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="domande_frequenti.html">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <span>Domande frequenti</span>
-                    </a>
-                </li>
-            </ul>
+            <div class="nav-links">
+                <a href="contatti.html">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Contatti</span>
+                </a>
+
+                <a href="chi_siamo.html">
+                    <i class="fa-solid fa-people-group"></i>
+                    <span>Chi siamo</span>
+                </a>
+
+                <a href="supportaci.html">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Supportaci</span>
+                </a>
+
+                <a href="domande_frequenti.html">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Domande frequenti</span>
+                </a>
+
+                <a
+                    href="javascript:void(0);"
+                    class="hambourger_menu"
+                    onclick="hambourger()"
+                >
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
         </nav>
 
         <!-- CONTENT -->
@@ -199,6 +202,6 @@
             </div>
         </footer>
         <!-- aspettare che il DOM venga caricato -->
-        <script src="carosello.js"></script>
+        <script src="hambourger.js"></script>
     </body>
 </html>

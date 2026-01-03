@@ -74,7 +74,6 @@ div {
     border-radius: 4px;
     transition: all 0.3s ease;
     color: white;
-    display: flex; /* Helps align the icon and text inside the link */
     align-items: center;
     gap: 5px;
 }
@@ -85,7 +84,7 @@ div {
 
 .nav-links a:hover {
     background-color: var(--color-med-yellow);
-    color: var(--color-dark-blue);
+    color: white;
 }
 
 /* ==============================
@@ -488,15 +487,6 @@ button:active {
     }
 }
 
-@media (max-width: 880px) {
-    .links-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0 5%;
-    }
-}
-
 /* ==============================
    8. RESPONSIVE MENU
    ============================== */
@@ -553,9 +543,7 @@ button:active {
     /* STATE: OPEN */
     .navbar.responsive {
         height: auto;
-        background-color: var(
-            --color-light-blue
-        ); /* Ensure background stays solid */
+        background-color: var(--color-light-blue);
     }
 
     .navbar.responsive .nav-links a:not(.navbar_logo):not(.hambourger_menu) {
@@ -563,7 +551,7 @@ button:active {
         width: 100%;
         padding: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 0; /* Square edges look better in a list */
+        border-radius: 0;
     }
 
     .nav-links a.hambourger_menu {
@@ -574,6 +562,6 @@ button:active {
         height: 80px;
         align-items: center;
         font-size: 24px;
-        z-index: 1001; /* Ensure it stays above the expanded links */
+        z-index: 1001;
     }
 }
