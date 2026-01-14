@@ -121,6 +121,33 @@ h3 {
     font-size: 25px;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 2px solid var(--color-white);
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-light-blue);
+    color: white;
+}
+
 /* ==============================
    4. CAROSELLO (Slideshow)
    ============================== */
