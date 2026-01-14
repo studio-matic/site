@@ -35,7 +35,8 @@ div {
 
 #email,
 #password,
-#invite {
+#invite,
+.input_utente {
     background-color: var(--color-white);
     border-radius: 14px;
     padding: 12px 22px;
@@ -112,6 +113,11 @@ div {
 .titolo_paragrafo {
     font-weight: 700;
     color: var(--color-light-blue);
+    font-size: 30px;
+}
+
+h3 {
+    color: var(--color-med-blue);
     font-size: 25px;
 }
 
