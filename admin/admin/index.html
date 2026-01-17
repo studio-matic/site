@@ -1,8 +1,9 @@
 <!doctype html>
-<html>
+<html lang="it">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <title>Studiomatic - Dashboard!</title>
         <link rel="icon" type="image/x-icon" href="../../images/logo.png" />
 
@@ -15,11 +16,15 @@
 
     <body>
         <main class="content">
+            <!-- Titolo -->
             <div class="testo_principale">
                 <h1 class="titolo_paragrafo">Benvenuto nella dashboard!</h1>
             </div>
+
+            <!-- DONAZIONI -->
             <div class="testo_principale">
                 <h3>Donazioni</h3>
+
                 <table id="donations" role="table">
                     <thead>
                         <tr>
@@ -31,12 +36,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Data rows will be inserted here by JS -->
+                        <!-- Popolato via JS -->
                     </tbody>
                 </table>
+
                 <h3 id="donation-heading">Aggiungi una nuova donazione</h3>
+
                 <form id="add-donation-form">
                     <input type="hidden" id="donation-id" />
+
                     <label>
                         Monete:
                         <input
@@ -47,6 +55,7 @@
                             min="0"
                         />
                     </label>
+
                     <label>
                         Introito (€):
                         <input
@@ -58,9 +67,11 @@
                             min="0"
                         />
                     </label>
+
                     <button type="submit" class="bottone" id="donation-submit">
                         Aggiungi donazione
                     </button>
+
                     <button
                         type="button"
                         id="donation-cancel"
@@ -69,12 +80,15 @@
                     >
                         Annulla
                     </button>
+                </form>
+
+                <div id="add-donation-status"></div>
             </div>
 
+            <!-- SOSTENITORI -->
             <div class="testo_principale">
-                </form>
-                <div id="add-donation-status"></div>
                 <h3>Sostenitori</h3>
+
                 <table id="supporters" role="table">
                     <thead>
                         <tr>
@@ -86,18 +100,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Data rows will be inserted here by JS -->
+                        <!-- Popolato via JS -->
                     </tbody>
                 </table>
+
                 <h3 id="supporter-heading">Aggiungi un nuovo supporter</h3>
+
                 <form id="add-supporter-form">
                     <input type="hidden" id="supporter-id" />
+
                     <label>
                         Nome:
                         <input
-                            class="input_utente"
                             type="text"
                             id="supporter-name"
+                            class="input_utente"
                             required
                         />
                     </label>
@@ -117,6 +134,7 @@
                     <button type="submit" class="bottone" id="supporter-submit">
                         Aggiungi sostenitore
                     </button>
+
                     <button
                         type="button"
                         id="supporter-cancel"
@@ -126,110 +144,111 @@
                         Annulla
                     </button>
                 </form>
+
                 <div id="add-supporter-status"></div>
             </div>
-
         </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-upper">
+                <div class="copyright">
+                    <a href="index.html">
+                        <img
+                            src="../../images/logo_background.svg"
+                            alt="Studiomatic logo"
+                            id="logo-footer"
+                        />
+                    </a>
+                    <p>
+                        <i class="fa-regular fa-copyright"></i>
+                        2025 Studiomatic
+                    </p>
+                </div>
+
+                <div class="term">
+                    <a href="/regole-utilizzo.html">Regole di Utilizzo</a>
+                    <a href="/informativa-privacy.html">Informativa Privacy</a>
+                </div>
+            </div>
+
+            <div class="links-container">
+                <nav class="footer-navigation">
+                    <ul>
+                        <li>
+                            <a href="contatti.html">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Contatti</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="chi_siamo.html">
+                                <i class="fa-solid fa-people-group"></i>
+                                <span>Chi siamo</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="supportaci.html">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>Supportaci</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="domande_frequenti.html">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <span>Domande frequenti</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="footer-contacts">
+                    <ul>
+                        <li>
+                            <a href="mailto:studiomatic.macchinzetti@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.imanzetti.edu.it/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <i class="fa-solid fa-school"></i>
+                                <span>ISITP Manzetti</span>
+                            </a>
+                            <p>Classe 5A IT</p>
+                            <p>A.S. 2025/2026</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a
+                        class="social-instagram"
+                        href="https://www.instagram.com/x"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        class="social-tiktok"
+                        href="https://www.tiktok.com/@x"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="admin/js/admin.js"></script>
     </body>
-
-    <footer class="footer">
-        <div class="footer-upper">
-            <div class="copyright">
-                <a href="index.html">
-                    <img
-                        src="../../images/logo_background.svg"
-                        alt="Studiomatic logo"
-                        id="logo-footer"
-                    />
-                </a>
-                <p>
-                    <i class="fa-regular fa-copyright"></i>
-                    2025 Studiomatic
-                </p>
-            </div>
-
-            <div class="term">
-                <a href="/regole-utilizzo.html">Regole di Utilizzo</a>
-                <a href="/informativa-privacy.html">Informativa Privacy</a>
-            </div>
-        </div>
-
-        <div class="links-container">
-            <nav class="footer-navigation">
-                <ul>
-                    <li>
-                        <a href="contatti.html">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>Contatti</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="chi_siamo.html">
-                            <i class="fa-solid fa-people-group"></i>
-                            <span>Chi siamo</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="supportaci.html">
-                            <i class="fa-solid fa-heart"></i>
-                            <span>Supportaci</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="domande_frequenti.html">
-                            <i class="fa-solid fa-circle-question"></i>
-                            <span>Domande frequenti</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="footer-contacts">
-                <ul>
-                    <li>
-                        <a href="mailto:studiomatic.macchinzetti@gmail.com">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>Email</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.imanzetti.edu.it/"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            <i class="fa-solid fa-school"></i>
-                            <span>ISITP Manzetti</span>
-                        </a>
-                        <p><span>Classe 5A IT</span></p>
-                        <p><span>A.S. 2025/2026</span></p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="footer-social">
-                <a
-                    class="social-instagram"
-                    href="https://www.instagram.com/x"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a
-                    class="social-tiktok"
-                    href="https://www.tiktok.com/@x"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="admin/js/admin.js"></script>
 </html>
