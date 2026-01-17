@@ -1,42 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Studiomatic - Admin dashboard</title>
+        <link rel="icon" type="image/x-icon" href="../../../images/logo.png" />
 
-<head>
-    <link href="../../css/admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/style.css" />
+        <link
+            rel="stylesheet"
+            href="../../../assets/fontawesome-free-7.1.0-web/css/all.min.css"
+        />
+    </head>
 
-    <meta charset="UTF-8">
-    <title>Users</title>
-</head>
+    <body>
+        <main class="content">
+            <div class="testo_principale">
+                <h1 class="titolo_paragrafo">
+                    Benvenuto nella dashboard degli admin!
+                </h1>
+                <h3>Inviti</h3>
+                <label for="roles">Scegli un ruolo:</label>
+                <select name="role" id="role" class="input_utente">
+                    <option value="None">None</option>
+                    <option value="editor">Editor</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button class="bottone" d="invite" onclick="invite()">
+                    Invite
+                </button>
+                <p>
+                    <strong>ATTENZIONE!</strong> i codici spariranno quando la
+                    pagina verrà ricaricata
+                </p>
+                <table id="invites" role="table">
+                    <thead>
+                        <tr>
+                            <th>Codice</th>
+                            <th>Ruolo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data rows will be inserted here by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
 
-<body>
-    <div id="status">checking backend ⏳</div>
-    <script src="../../js/main.js"></script>
-    <script src="../../js/admin/users/invite.js"></script>
-    <script>redirLoggedOut()</script>
-    <script>redirUnauthorized()</script>
+        <footer class="footer">
+            <div class="footer-upper">
+                <div class="copyright">
+                    <a href="index.html">
+                        <img
+                            src="../../../images/logo_background.svg"
+                            alt="Studiomatic logo"
+                            id="logo-footer"
+                        />
+                    </a>
+                    <p>
+                        <i class="fa-regular fa-copyright"></i>
+                        2025 Studiomatic
+                    </p>
+                </div>
 
-    <h2>Welcome to the admin dashboard</h2>
+                <div class="term">
+                    <a href="/regole-utilizzo.html">Regole di Utilizzo</a>
+                    <a href="/informativa-privacy.html">Informativa Privacy</a>
+                </div>
+            </div>
 
-    <h3>Invite</h3>
-    <label for="roles">Choose a role:</label>
-    <select name="role" id="role">
-          <option value="None">None</option>
-          <option value="editor">Editor</option>
-          <option value="admin">Admin</option>
-    </select>
-    <button id="invite" onclick="invite()">Invite</button>
-    <p>Note that these codes will disappear on page reload</p>
-    <table id="invites" role="table">
-        <thead>
-            <tr>
-                <th>Code</th>
-                <th>Role</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data rows will be inserted here by JS -->
-        </tbody>
-    </table>
-</body>
+            <div class="links-container">
+                <nav class="footer-navigation">
+                    <ul>
+                        <li>
+                            <a href="contatti.html">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Contatti</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="chi_siamo.html">
+                                <i class="fa-solid fa-people-group"></i>
+                                <span>Chi siamo</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="supportaci.html">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>Supportaci</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="domande_frequenti.html">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <span>Domande frequenti</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
+                <div class="footer-contacts">
+                    <ul>
+                        <li>
+                            <a href="mailto:studiomatic.macchinzetti@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.imanzetti.edu.it/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <i class="fa-solid fa-school"></i>
+                                <span>ISITP Manzetti</span>
+                            </a>
+                            <p><span>Classe 5A IT</span></p>
+                            <p><span>A.S. 2025/2026</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a
+                        class="social-instagram"
+                        href="https://www.instagram.com/x"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        class="social-tiktok"
+                        href="https://www.tiktok.com/@x"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../../js/main.js"></script>
+        <script>
+            redirLoggedOut();
+        </script>
+        <script>
+            redirUnauthorized();
+        </script>
+    </body>
 </html>

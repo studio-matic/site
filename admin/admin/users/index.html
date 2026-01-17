@@ -1,13 +1,140 @@
 <!doctype html>
 <html>
     <head>
-        <link href="../../css/admin.css" rel="stylesheet" />
-
         <meta charset="UTF-8" />
-        <title>Users</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Studiomatic - Admin dashboard</title>
+        <link rel="icon" type="image/x-icon" href="../../../images/logo.png" />
+
+        <link rel="stylesheet" href="../../css/style.css" />
+        <link
+            rel="stylesheet"
+            href="../../../assets/fontawesome-free-7.1.0-web/css/all.min.css"
+        />
     </head>
 
     <body>
+        <main class="content">
+            <div class="testo_principale">
+                <h1 class="titolo_paragrafo">
+                    Benvenuto nella dashboard degli admin!
+                </h1>
+
+                <h3>Utenti</h3>
+                <table id="users" role="table">
+                    <thead>
+                        <tr>
+                            <th>email</th>
+                            <th>ruolo</th>
+                            <th>azione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data rows will be inserted here by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-upper">
+                <div class="copyright">
+                    <a href="index.html">
+                        <img
+                            src="../../../images/logo_background.svg"
+                            alt="Studiomatic logo"
+                            id="logo-footer"
+                        />
+                    </a>
+                    <p>
+                        <i class="fa-regular fa-copyright"></i>
+                        2025 Studiomatic
+                    </p>
+                </div>
+
+                <div class="term">
+                    <a href="/regole-utilizzo.html">Regole di Utilizzo</a>
+                    <a href="/informativa-privacy.html">Informativa Privacy</a>
+                </div>
+            </div>
+
+            <div class="links-container">
+                <nav class="footer-navigation">
+                    <ul>
+                        <li>
+                            <a href="contatti.html">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Contatti</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="chi_siamo.html">
+                                <i class="fa-solid fa-people-group"></i>
+                                <span>Chi siamo</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="supportaci.html">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>Supportaci</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="domande_frequenti.html">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <span>Domande frequenti</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="footer-contacts">
+                    <ul>
+                        <li>
+                            <a href="mailto:studiomatic.macchinzetti@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.imanzetti.edu.it/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <i class="fa-solid fa-school"></i>
+                                <span>ISITP Manzetti</span>
+                            </a>
+                            <p><span>Classe 5A IT</span></p>
+                            <p><span>A.S. 2025/2026</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a
+                        class="social-instagram"
+                        href="https://www.instagram.com/x"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        class="social-tiktok"
+                        href="https://www.tiktok.com/@x"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
         <script src="../../js/main.js"></script>
         <script src="../../js/admin/users.js"></script>
         <script>
@@ -16,22 +143,6 @@
         <script>
             redirUnauthorized();
         </script>
-
-        <h2>Welcome to the admin dashboard</h2>
-
-        <h3>Users</h3>
-        <table id="users" role="table">
-            <thead>
-                <tr>
-                    <th>email</th>
-                    <th>role</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data rows will be inserted here by JS -->
-            </tbody>
-        </table>
         <script>
             loadDbData();
         </script>
