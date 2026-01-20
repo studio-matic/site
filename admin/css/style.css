@@ -118,6 +118,13 @@ h3 {
     font-size: 25px;
 }
 
+.tabella_responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;

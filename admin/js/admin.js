@@ -9,7 +9,7 @@ function prettyDate(isoString) {
 
 async function loadTable({ url, selector, emptyText, columns }) {
   const tbody = document.querySelector(selector);
-  tbody.innerHTML = `<tr><td colspan="5">Loading…</td></tr>`;
+  tbody.innerHTML = `<tr><td colspan="5">Caricamento…</td></tr>`;
 
   try {
     const res = await fetch(url, {
@@ -91,8 +91,9 @@ function resetDonationForm() {
   const form = document.getElementById("add-donation-form");
   form.reset();
   document.getElementById("donation-id").value = "";
-  document.getElementById("donation-heading").innerText = "Add a new donation";
-  document.getElementById("donation-submit").innerText = "Add Donation";
+  document.getElementById("donation-heading").innerText =
+    "Aggiungi una nuova donazione";
+  document.getElementById("donation-submit").innerText = "Aggiungi donazione";
   document.getElementById("donation-cancel").style.display = "none";
   document.getElementById("add-donation-status").innerText = "";
 }
@@ -168,7 +169,7 @@ async function enableForms() {
     .addEventListener("click", async (e) => {
       if (e.target.classList.contains("delete-donation")) {
         const id = e.target.dataset.id;
-        if (confirm("Are you sure you want to delete this donation?")) {
+        if (confirm("Sei sicuro di voler cancellare la donazione?")) {
           const res = await fetch(`${baseUrl}/donations/${id}`, {
             method: "DELETE",
             credentials: "include",
@@ -226,7 +227,7 @@ async function enableForms() {
         });
 
         if (!donationRes.ok) {
-          statusEl.innerText = "Failed to create donation ❌";
+          statusEl.innerText = "Errore nella creazione della donazione";
           return;
         }
 
@@ -287,7 +288,7 @@ async function enableForms() {
       loadDbData();
     } catch (err) {
       console.error(err);
-      statusEl.innerText = "Network error ❌";
+      statusEl.innerText = "Errore di rete";
     }
   });
 
@@ -300,7 +301,7 @@ async function enableForms() {
     .addEventListener("click", async (e) => {
       if (e.target.classList.contains("delete-supporter")) {
         const id = e.target.dataset.id;
-        if (confirm("Delete supporter?")) {
+        if (confirm("Vuoi cancellare il sostenitore?")) {
           const res = await fetch(`${baseUrl}/supporters/${id}`, {
             method: "DELETE",
             credentials: "include",
@@ -327,9 +328,9 @@ async function enableForms() {
           "none";
 
         document.getElementById("supporter-heading").innerText =
-          "Update Supporter";
+          "Aggiorna sostenitore";
         document.getElementById("supporter-submit").innerText =
-          "Update Supporter";
+          "Aggiorna sostenitore";
         document.getElementById("supporter-cancel").style.display = "inline";
       }
     });
