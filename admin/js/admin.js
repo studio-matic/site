@@ -19,7 +19,7 @@ async function loadTable({ url, selector, emptyText, columns }) {
     });
 
     if (!res.ok) {
-      tbody.innerHTML = `<tr><td colspan="5">Failed to load data ❌</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="5">Errore durante la connessione al Database</td></tr>`;
       return;
     }
 
@@ -38,7 +38,7 @@ async function loadTable({ url, selector, emptyText, columns }) {
     });
   } catch (err) {
     console.error(err);
-    tbody.innerHTML = `<tr><td colspan="5">Error connecting to backend ❌</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5">Errore durante la connessione al Database</td></tr>`;
   }
 }
 
@@ -46,15 +46,15 @@ async function loadDbData() {
   await loadTable({
     url: `${baseUrl}/donations`,
     selector: "#donations tbody",
-    emptyText: "No donations yet",
+    emptyText: "Nessuna donazione",
     columns: ({ id, coins, donated_at, income_eur, co_op }) => `
             <td>${coins}</td>
             <td>${prettyDate(donated_at)}</td>
             <td>${income_eur.toFixed(2)}</td>
             <td>${co_op}</td>
             <td>
-                <button class="edit-donation" data-id="${id}">Edit</button>
-                <button class="delete-donation" data-id="${id}">Delete</button>
+                <button class="edit-donation" data-id="${id}">Modifica</button>
+                <button class="delete-donation" data-id="${id}">Cancella</button>
             </td>
         `,
   });
@@ -70,7 +70,7 @@ async function loadDbData() {
   await loadTable({
     url: `${baseUrl}/supporters`,
     selector: "#supporters tbody",
-    emptyText: "No supporters yet",
+    emptyText: "Nessun sostenitore",
     columns: ({ id, name, donation_id }) => {
       const donation = donationMap.get(donation_id);
       return `
@@ -79,8 +79,8 @@ async function loadDbData() {
                 <td>${donation.income_eur.toFixed(2)}</td>
                 <td>${donation.co_op}</td>
                 <td>
-                    <button class="edit-supporter" data-id="${id}">Edit</button>
-                    <button class="delete-supporter" data-id="${id}">Delete</button>
+                    <button class="edit-supporter" data-id="${id}">Modifica</button>
+                    <button class="delete-supporter" data-id="${id}">Cancella</button>
                 </td>
             `;
     },
@@ -144,16 +144,18 @@ async function enableForms() {
       }
 
       if (res.ok) {
-        statusEl.innerText = id ? "Donation updated ✅" : "Donation added ✅";
+        statusEl.innerText = id
+          ? "Donazione aggiornata!"
+          : "Donazione aggiornata!";
         resetDonationForm();
         loadDbData();
       } else {
         const text = await res.text();
-        statusEl.innerText = `Failed ❌: ${text}`;
+        statusEl.innerText = `Operazione fallita: ${text}`;
       }
     } catch (err) {
       console.error(err);
-      statusEl.innerText = "Error connecting to backend ❌";
+      statusEl.innerText = "Errore nella connessione con il backend";
     }
   });
 
@@ -172,7 +174,7 @@ async function enableForms() {
             credentials: "include",
           });
           if (res.ok) {
-            alert("Donation deleted ✅");
+            alert("Donazione cancellata");
             loadDbData();
           } else {
             alert(await res.text());
@@ -190,9 +192,9 @@ async function enableForms() {
         document.getElementById("donation-income").value = cells[2].innerText;
 
         document.getElementById("donation-heading").innerText =
-          "Update a donation";
+          "Aggiorna la donazione";
         document.getElementById("donation-submit").innerText =
-          "Update Donation";
+          "Aggiorna la donazione";
         document.getElementById("donation-cancel").style.display = "inline";
       }
     });
@@ -242,11 +244,11 @@ async function enableForms() {
         });
 
         if (!supporterRes.ok) {
-          statusEl.innerText = "Failed to create supporter ❌";
+          statusEl.innerText = "Errore nell'aggiunta del sostenitore";
           return;
         }
 
-        statusEl.innerText = "Supporter added ✅";
+        statusEl.innerText = "Sostenitore aggiunto";
       } else {
         const getRes = await fetch(`${baseUrl}/supporters/${supporterId}`, {
           method: "GET",
@@ -255,7 +257,7 @@ async function enableForms() {
         });
 
         if (!getRes.ok) {
-          statusEl.innerText = "Failed to fetch supporter data ❌";
+          statusEl.innerText = "Errore nel recupero dei dati";
           return;
         }
 
@@ -273,11 +275,12 @@ async function enableForms() {
         );
 
         if (!supporterUpdate.ok) {
-          statusEl.innerText = "Failed to update supporter ❌";
+          statusEl.innerText =
+            "Errore nell'aggiornamento dei dati del sostenitore";
           return;
         }
 
-        statusEl.innerText = "Supporter updated ✅";
+        statusEl.innerText = "Sostenitore aggiunto";
       }
 
       resetSupporterForm();
