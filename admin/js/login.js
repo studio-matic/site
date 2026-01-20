@@ -26,7 +26,7 @@ async function signin() {
   });
   if (res.ok) {
     const params = new URLSearchParams(window.location.search);
-    const nextPage = params.get("next") || `${hostingPrefix}/admin`;
+    const nextPage = params.get("next") || `${hostingPrefix}/admin/index.html`;
     window.location.href = nextPage;
   } else {
     alert(await res.text());
