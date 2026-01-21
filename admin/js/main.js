@@ -39,7 +39,7 @@ async function redirLoggedOut() {
   });
   if (!res.ok) {
     const returnUrl = encodeURIComponent(window.location.pathname);
-    window.location.href = `${hostingPrefix}/login?next=${returnUrl}`;
+    window.location.href = `${hostingPrefix}/admin/login?next=${returnUrl}`;
   }
 }
 
